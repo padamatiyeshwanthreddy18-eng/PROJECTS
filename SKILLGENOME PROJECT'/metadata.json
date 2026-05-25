@@ -1,0 +1,6 @@
+{
+  "name": "SkillGenome AI",
+  "description": "Advanced developer intelligence and career evolution system with real-time analytics, AI roadmaps, and simulated technical interviews.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

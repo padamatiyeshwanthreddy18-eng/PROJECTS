@@ -1,0 +1,154 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: 'Space Grotesk', 'Inter', system-ui, sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+}
+
+@layer base {
+  body {
+    background-color: #05070a;
+    color: #cbd5e1;
+    font-family: var(--font-sans);
+    overflow-x: hidden;
+  }
+}
+
+/* Glassmorphism Styles configured for the Immersive UI theme */
+.glass-panel {
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  box-shadow: 0 16px 40px -10px rgba(0, 0, 0, 0.7);
+  border-radius: 24px;
+}
+
+.glass-panel-heavy {
+  background: rgba(5, 7, 10, 0.85);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+/* Glowing Elements */
+.glow-blue {
+  box-shadow: 0 0 30px rgba(34, 211, 238, 0.25);
+}
+
+.glow-purple {
+  box-shadow: 0 0 30px rgba(168, 85, 247, 0.25);
+}
+
+.glow-pink {
+  box-shadow: 0 0 30px rgba(236, 72, 153, 0.25);
+}
+
+.glow-text-blue {
+  text-shadow: 0 0 15px rgba(34, 211, 238, 0.5);
+}
+
+.glow-text-purple {
+  text-shadow: 0 0 15px rgba(168, 85, 247, 0.5);
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(5, 7, 10, 0.9);
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(34, 211, 238, 0.2);
+  border-radius: 9px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(34, 211, 238, 0.5);
+}
+
+/* Hologram Matrix Rain and Scan Line Grid Style */
+.hologram-grid {
+  background-image: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.25) 50%), 
+                    linear-gradient(90deg, rgba(255, 0, 0, 0.03), rgba(0, 255, 0, 0.01), rgba(0, 0, 255, 0.03));
+  background-size: 100% 4px, 6px 100%;
+}
+
+.scanning-line {
+  height: 4px;
+  background: linear-gradient(90deg, transparent, rgba(6, 182, 212, 0.8), transparent);
+  animation: scanning 4s linear infinite;
+}
+
+@keyframes scanning {
+  0% { transform: translateY(-50px); opacity: 0; }
+  10% { opacity: 1; }
+  90% { opacity: 1; }
+  100% { transform: translateY(600px); opacity: 0; }
+}
+
+/* Floating coding animations */
+@keyframes float {
+  0% { transform: translateY(0px) rotate(0deg); opacity: 0.2; }
+  50% { transform: translateY(-15px) rotate(2deg); opacity: 0.5; }
+  100% { transform: translateY(0px) rotate(0deg); opacity: 0.2; }
+}
+
+.floating-bg-item {
+  animation: float 6s ease-in-out infinite;
+}
+
+/* Double Helix Visual */
+.helix-container {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  height: 120px;
+  align-items: center;
+  position: relative;
+}
+
+.helix-strand {
+  position: absolute;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  animation: orbit 2.5s ease-in-out infinite;
+}
+
+@keyframes orbit {
+  0% {
+    transform: scale(0.6) translateY(-40px);
+    z-index: 1;
+    opacity: 0.4;
+  }
+  50% {
+    transform: scale(1.3) translateY(40px);
+    z-index: 10;
+    opacity: 1;
+  }
+  100% {
+    transform: scale(0.6) translateY(-40px);
+    z-index: 1;
+    opacity: 0.4;
+  }
+}
+
+/* Futuristic Back Navigation System Utilities */
+@keyframes shine {
+  0% { left: -100%; opacity: 0; }
+  25% { opacity: 0.5; }
+  50% { opacity: 1; }
+  75% { opacity: 0.5; }
+  100% { left: 200%; opacity: 0; }
+}
+
+.animate-shine {
+  animation: shine 1.8s ease-in-out infinite;
+  position: absolute;
+}
